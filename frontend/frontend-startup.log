@@ -1,0 +1,34 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.248.150.104:3000
+✓ Ready in 684ms
+Creating turbopack project {
+  dir: "C:\\Users\\Rehan's Lenovo\\OneDrive\\Desktop\\Momentum\\frontend",
+  testMode: true
+}
+
+ GET /login 200 in 3.2s (next.js: 2.8s, application-code: 386ms)
+ GET /register 200 in 613ms (next.js: 524ms, application-code: 88ms)
+ GET /dashboard 200 in 935ms (next.js: 781ms, application-code: 154ms)
+ GET /today 200 in 627ms (next.js: 568ms, application-code: 60ms)
+ GET /habits 200 in 377ms (next.js: 330ms, application-code: 47ms)
+ GET /analytics 200 in 382ms (next.js: 330ms, application-code: 52ms)
+ GET /mood 200 in 417ms (next.js: 366ms, application-code: 51ms)
+ GET /achievements 200 in 477ms (next.js: 415ms, application-code: 62ms)
+ GET /ai 200 in 444ms (next.js: 383ms, application-code: 62ms)
+ GET /settings 200 in 420ms (next.js: 362ms, application-code: 59ms)
+ GET / 200 in 723ms (next.js: 601ms, application-code: 122ms)
+ GET /login 200 in 74ms (next.js: 8ms, application-code: 65ms)
+ GET /dashboard 200 in 49ms (next.js: 6ms, application-code: 42ms)
+ GET /login 200 in 122ms (next.js: 7ms, application-code: 116ms)
+ GET /login 200 in 77ms (next.js: 9ms, application-code: 68ms)
+ GET /register 200 in 47ms (next.js: 5ms, application-code: 42ms)
+ GET /login 200 in 39ms (next.js: 4ms, application-code: 35ms)
+ GET /login 200 in 64ms (next.js: 5ms, application-code: 59ms)
+ GET /register 200 in 36ms (next.js: 4ms, application-code: 32ms)
+ GET /login 200 in 44ms (next.js: 6ms, application-code: 38ms)
+ GET /register 200 in 46ms (next.js: 5ms, application-code: 41ms)

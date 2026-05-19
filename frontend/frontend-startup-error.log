@@ -301,3 +301,100 @@ Import traces:
 
     at <unknown> (Error: ./app/dashboard/page.js:164:1)
     at <unknown> (Error: (./app/dashboard/page.js:164:1)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+      <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+        <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+          <LoadingBoundary name="dashboard/" loading={null}>
+            <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/dashboard" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                    <SegmentViewNode type="page" pagePath="dashboard/...">
+                      <SegmentTrieNode>
+                      <ClientPageRoot Component={function DashboardPage} serverProvidedParams={{...}}>
+                        <DashboardPage params={Promise} searchParams={Promise}>
+                          <AppShell title="Dashboard" description="A live rea...">
+                            <RouteGuard>
++                             <div className="min-h-screen bg-background text-foreground">
+-                             <main
+-                               className="flex min-h-screen items-center justify-center bg-background text-foreground"
+-                             >
+                    ...
+                  ...
+        ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at throwOnHydrationMismatch (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3318:56)
+    at beginWork (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6758:918)
+    at runWithFiberInDEV (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopConcurrentByScheduler (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+    at div (<anonymous>)
+    at AppShell (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/_0rou-t_._.js:250:221)
+    at DashboardPage (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/_0rou-t_._.js:838:214)
+    at ClientPageRoot (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_0tt2wve._.js:4461:50)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)

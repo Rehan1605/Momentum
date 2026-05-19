@@ -42,13 +42,108 @@ const summaryConfig = [
 
 const formatValue = (value, suffix) => `${value ?? 0}${suffix}`;
 
-const heatIntensity = (count) => {
-  if (count >= 4) return "bg-emerald-300";
-  if (count === 3) return "bg-emerald-500";
-  if (count === 2) return "bg-emerald-700";
-  if (count === 1) return "bg-emerald-900";
-  return "bg-zinc-800";
+const parseDateKey = (dateKey) => new Date(`${dateKey}T00:00:00`);
+
+const formatDateKey = (date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
 };
+
+const formatTooltipDate = (dateKey) =>
+  new Intl.DateTimeFormat("en", {
+    month: "short",
+    day: "numeric",
+  }).format(parseDateKey(dateKey));
+
+const formatMonth = (dateKey) =>
+  new Intl.DateTimeFormat("en", {
+    month: "short",
+  }).format(parseDateKey(dateKey));
+
+const todayKey = () => formatDateKey(new Date());
+
+const addDays = (date, amount) => {
+  const next = new Date(date);
+  next.setDate(next.getDate() + amount);
+  return next;
+};
+
+const heatIntensity = (count, maxCount) => {
+  if (!count || !maxCount) return "bg-zinc-800";
+
+  const ratio = count / maxCount;
+
+  if (ratio <= 0.33) return "bg-emerald-950";
+  if (ratio <= 0.66) return "bg-emerald-700";
+  if (ratio < 1) return "bg-emerald-500";
+  return "bg-emerald-300";
+};
+
+const buildHeatmapWeeks = (heatmap) => {
+  if (!heatmap.length) {
+    return {
+      weeks: [],
+      monthLabels: [],
+      maxCount: 0,
+    };
+  }
+
+  const sorted = [...heatmap].sort((a, b) => a.date.localeCompare(b.date));
+  const countByDate = new Map(sorted.map((day) => [day.date, day.completedCount || 0]));
+  const start = parseDateKey(sorted[0].date);
+  const end = parseDateKey(sorted[sorted.length - 1].date);
+  const days = [];
+
+  for (let date = start; date <= end; date = addDays(date, 1)) {
+    const dateKey = formatDateKey(date);
+    days.push({
+      date: dateKey,
+      completedCount: countByDate.get(dateKey) || 0,
+      missingFromApi: !countByDate.has(dateKey),
+    });
+  }
+
+  const paddedDays = [
+    ...Array.from({ length: start.getDay() }, () => null),
+    ...days,
+  ];
+  const weeks = [];
+
+  for (let index = 0; index < paddedDays.length; index += 7) {
+    weeks.push(paddedDays.slice(index, index + 7));
+  }
+
+  const monthLabels = weeks.map((week, index) => {
+    const firstDay = week.find(Boolean);
+    const previousWeek = weeks[index - 1];
+    const previousDay = previousWeek?.findLast?.(Boolean) || previousWeek?.filter(Boolean).at(-1);
+
+    if (!firstDay) return "";
+    if (!previousDay) return formatMonth(firstDay.date);
+
+    return parseDateKey(firstDay.date).getMonth() !== parseDateKey(previousDay.date).getMonth()
+      ? formatMonth(firstDay.date)
+      : "";
+  });
+
+  return {
+    weeks,
+    monthLabels,
+    maxCount: Math.max(...days.map((day) => day.completedCount)),
+  };
+};
+
+const tooltipText = (day) => {
+  const count = day.completedCount;
+  const habitWord = count === 1 ? "habit" : "habits";
+
+  return `${formatTooltipDate(day.date)} - ${count} ${habitWord} completed`;
+};
+
+const dayLabels = ["", "Mon", "", "Wed", "", "Fri", ""];
 
 function DashboardSkeleton() {
   return (
@@ -121,7 +216,7 @@ export default function DashboardPage() {
     };
   }, []);
 
-  const recentHeatmap = useMemo(() => data.heatmap.slice(-70), [data.heatmap]);
+  const heatmapGrid = useMemo(() => buildHeatmapWeeks(data.heatmap), [data.heatmap]);
 
   return (
     <AppShell
@@ -247,15 +342,92 @@ export default function DashboardPage() {
 
           <section className="grid gap-4 lg:grid-cols-[1.3fr_0.7fr]">
             <article className="rounded-md border border-white/10 bg-zinc-900/75 p-5">
-              <h2 className="text-lg font-semibold text-zinc-100">Activity Heatmap</h2>
-              <div className="mt-4 grid grid-cols-10 gap-1 sm:grid-cols-14">
-                {recentHeatmap.map((day) => (
-                  <div
-                    key={day.date}
-                    title={`${day.date}: ${day.completedCount}`}
-                    className={`aspect-square rounded-sm ${heatIntensity(day.completedCount)}`}
-                  />
-                ))}
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <h2 className="text-lg font-semibold text-zinc-100">Activity Heatmap</h2>
+                  <p className="mt-1 text-sm text-zinc-500">Last 90 days, aligned by weekday</p>
+                </div>
+                <div className="hidden items-center gap-1 text-xs text-zinc-500 sm:flex">
+                  <span>Less</span>
+                  {[0, 1, 2, 3, 4].map((level) => (
+                    <span
+                      key={level}
+                      className={`size-3 rounded-sm ${
+                        ["bg-zinc-800", "bg-emerald-950", "bg-emerald-700", "bg-emerald-500", "bg-emerald-300"][level]
+                      }`}
+                    />
+                  ))}
+                  <span>More</span>
+                </div>
+              </div>
+
+              <div className="mt-4 overflow-x-auto pb-2">
+                {heatmapGrid.weeks.length ? (
+                  <div className="min-w-max">
+                    <div
+                      className="ml-8 grid gap-1"
+                      style={{
+                        gridTemplateColumns: `repeat(${heatmapGrid.weeks.length}, minmax(12px, 12px))`,
+                      }}
+                    >
+                      {heatmapGrid.monthLabels.map((label, index) => (
+                        <div key={`${label}-${index}`} className="h-5 text-xs text-zinc-500">
+                          {label}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-1 flex gap-2">
+                      <div className="grid grid-rows-7 gap-1">
+                        {dayLabels.map((label, index) => (
+                          <div key={`${label}-${index}`} className="h-3 w-6 text-[10px] leading-3 text-zinc-500">
+                            {label}
+                          </div>
+                        ))}
+                      </div>
+
+                      <div
+                        className="grid grid-flow-col grid-rows-7 gap-1"
+                        style={{
+                          gridTemplateColumns: `repeat(${heatmapGrid.weeks.length}, minmax(12px, 12px))`,
+                        }}
+                      >
+                        {heatmapGrid.weeks.map((week, weekIndex) =>
+                          Array.from({ length: 7 }).map((_, dayIndex) => {
+                            const day = week[dayIndex] || null;
+                            const isToday = day?.date === todayKey();
+
+                            if (!day) {
+                              return (
+                                <div
+                                  key={`empty-${weekIndex}-${dayIndex}`}
+                                  className="size-3 rounded-sm bg-transparent"
+                                />
+                              );
+                            }
+
+                            return (
+                              <div key={day.date} className="group relative">
+                                <div
+                                  className={`size-3 rounded-sm ${heatIntensity(
+                                    day.completedCount,
+                                    heatmapGrid.maxCount
+                                  )} ${isToday ? "ring-1 ring-cyan-300 ring-offset-1 ring-offset-zinc-900" : ""}`}
+                                  aria-label={tooltipText(day)}
+                                />
+                                <div className="pointer-events-none absolute bottom-5 left-1/2 z-20 hidden w-max -translate-x-1/2 rounded-md border border-white/10 bg-zinc-950 px-2 py-1 text-xs text-zinc-100 shadow-xl shadow-black/40 group-hover:block">
+                                  {tooltipText(day)}
+                                </div>
+                              </div>
+                            );
+                          })
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-sm text-zinc-400">No heatmap data yet.</p>
+                )}
               </div>
             </article>
 

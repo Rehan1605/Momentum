@@ -95,3 +95,209 @@ https://react.dev/link/hydration-mismatch
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. (file://C:/Users/Rehan's Lenovo/OneDrive/Desktop/Momentum/frontend/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2477:13)
+⨯ ./app/dashboard/page.js:149:1
+Expression expected
+  [90m147 |[0m [36mconst[0m dayLabels = [[32m""[0m, [32m"Mon"[0m, [32m""[0m, [32m"Wed"[0m, [32m""[0m, [32m"Fri"[0m, [32m""[0m];
+  [90m148 |[0m   [36mreturn[0m [32m"bg-zinc-800"[0m;
+[31m[1m>[0m [90m149 |[0m };
+  [90m    |[0m [31m[1m^[0m
+  [90m150 |[0m
+  [90m151 |[0m [36mfunction[0m [33mDashboardSkeleton[0m() {
+  [90m152 |[0m   [36mreturn[0m (
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.js [Client Component Browser]
+    ./app/dashboard/page.js [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.js [Client Component SSR]
+    ./app/dashboard/page.js [Server Component]
+
+
+⨯ ./app/dashboard/page.js:149:1
+Expression expected
+  [90m147 |[0m [36mconst[0m dayLabels = [[32m""[0m, [32m"Mon"[0m, [32m""[0m, [32m"Wed"[0m, [32m""[0m, [32m"Fri"[0m, [32m""[0m];
+  [90m148 |[0m   [36mreturn[0m [32m"bg-zinc-800"[0m;
+[31m[1m>[0m [90m149 |[0m };
+  [90m    |[0m [31m[1m^[0m
+  [90m150 |[0m
+  [90m151 |[0m [36mfunction[0m [33mDashboardSkeleton[0m() {
+  [90m152 |[0m   [36mreturn[0m (
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.js [Client Component Browser]
+    ./app/dashboard/page.js [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.js [Client Component SSR]
+    ./app/dashboard/page.js [Server Component]
+
+
+⨯ ./app/dashboard/page.js:149:1
+Expression expected
+  [90m147 |[0m [36mconst[0m dayLabels = [[32m""[0m, [32m"Mon"[0m, [32m""[0m, [32m"Wed"[0m, [32m""[0m, [32m"Fri"[0m, [32m""[0m];
+  [90m148 |[0m   [36mreturn[0m [32m"bg-zinc-800"[0m;
+[31m[1m>[0m [90m149 |[0m };
+  [90m    |[0m [31m[1m^[0m
+  [90m150 |[0m
+  [90m151 |[0m [36mfunction[0m [33mDashboardSkeleton[0m() {
+  [90m152 |[0m   [36mreturn[0m (
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.js [Client Component Browser]
+    ./app/dashboard/page.js [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.js [Client Component SSR]
+    ./app/dashboard/page.js [Server Component]
+
+
+⨯ ./app/dashboard/page.js:149:1
+Expression expected
+  [90m147 |[0m [36mconst[0m dayLabels = [[32m""[0m, [32m"Mon"[0m, [32m""[0m, [32m"Wed"[0m, [32m""[0m, [32m"Fri"[0m, [32m""[0m];
+  [90m148 |[0m   [36mreturn[0m [32m"bg-zinc-800"[0m;
+[31m[1m>[0m [90m149 |[0m };
+  [90m    |[0m [31m[1m^[0m
+  [90m150 |[0m
+  [90m151 |[0m [36mfunction[0m [33mDashboardSkeleton[0m() {
+  [90m152 |[0m   [36mreturn[0m (
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.js [Client Component Browser]
+    ./app/dashboard/page.js [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.js [Client Component SSR]
+    ./app/dashboard/page.js [Server Component]
+
+
+[browser] Uncaught Error: ./app/dashboard/page.js:149:1
+Expression expected
+  147 | const dayLabels = ["", "Mon", "", "Wed", "", "Fri", ""];
+  148 |   return "bg-zinc-800";
+> 149 | };
+      | ^
+  150 |
+  151 | function DashboardSkeleton() {
+  152 |   return (
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.js [Client Component Browser]
+    ./app/dashboard/page.js [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.js [Client Component SSR]
+    ./app/dashboard/page.js [Server Component]
+
+
+    at <unknown> (Error: ./app/dashboard/page.js:149:1)
+    at <unknown> (Error: (./app/dashboard/page.js:149:1)
+⨯ ./app/dashboard/page.js:164:1
+'import', and 'export' cannot be used outside of module code
+  [90m162 |[0m }
+  [90m163 |[0m
+[31m[1m>[0m [90m164 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mDashboardPage[0m() {
+  [90m    |[0m [31m[1m^^^^^^[0m
+  [90m165 |[0m   [36mconst[0m [data, setData] = useState({
+  [90m166 |[0m     dashboard: [36mnull[0m,
+  [90m167 |[0m     streaks: [],
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.js [Client Component Browser]
+    ./app/dashboard/page.js [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.js [Client Component SSR]
+    ./app/dashboard/page.js [Server Component]
+
+
+[browser] Uncaught Error: ./app/dashboard/page.js:164:1
+'import', and 'export' cannot be used outside of module code
+  162 | }
+  163 |
+> 164 | export default function DashboardPage() {
+      | ^^^^^^
+  165 |   const [data, setData] = useState({
+  166 |     dashboard: null,
+  167 |     streaks: [],
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.js [Client Component Browser]
+    ./app/dashboard/page.js [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.js [Client Component SSR]
+    ./app/dashboard/page.js [Server Component]
+
+
+    at <unknown> (Error: ./app/dashboard/page.js:164:1)
+    at <unknown> (Error: (./app/dashboard/page.js:164:1)

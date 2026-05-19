@@ -176,3 +176,28 @@ Creating turbopack project {
  GET /dashboard 200 in 242ms (next.js: 133ms, application-code: 109ms)
  GET /dashboard 200 in 44ms (next.js: 5ms, application-code: 38ms)
  GET /ai 200 in 61ms (next.js: 22ms, application-code: 39ms)
+ GET /dashboard 200 in 51ms (next.js: 7ms, application-code: 45ms)
+ GET /analytics 200 in 80ms (next.js: 31ms, application-code: 49ms)
+ GET /ai 200 in 32ms (next.js: 5ms, application-code: 27ms)
+ GET /today 200 in 82ms (next.js: 39ms, application-code: 43ms)
+ GET /habits 200 in 88ms (next.js: 39ms, application-code: 49ms)
+ GET /today 200 in 52ms (next.js: 7ms, application-code: 46ms)
+ GET /dashboard 200 in 46ms (next.js: 10ms, application-code: 37ms)
+ GET /mood 200 in 81ms (next.js: 39ms, application-code: 42ms)
+ GET /analytics 200 in 40ms (next.js: 6ms, application-code: 34ms)
+ GET /today 200 in 35ms (next.js: 6ms, application-code: 29ms)
+ GET /ai 200 in 38ms (next.js: 6ms, application-code: 32ms)
+ GET /dashboard 200 in 51ms (next.js: 7ms, application-code: 45ms)
+✓ Compiled in 481ms
+ GET /dashboard 500 in 2.5s (next.js: 2.1s, application-code: 397ms)
+ GET /dashboard 500 in 55ms (next.js: 22ms, application-code: 33ms)
+ GET /dashboard 500 in 69ms (next.js: 44ms, application-code: 24ms)
+✓ Compiled in 181ms
+ GET /dashboard 200 in 99ms (next.js: 6ms, application-code: 93ms)
+✓ Compiled in 207ms
+ GET /dashboard 200 in 467ms (next.js: 381ms, application-code: 86ms)
+✓ Compiled in 150ms
+ GET /dashboard 500 in 166ms (next.js: 140ms, application-code: 25ms)
+✓ Compiled in 135ms
+ GET /dashboard 200 in 915ms (next.js: 278ms, application-code: 637ms)
+ GET /dashboard 200 in 76ms (next.js: 6ms, application-code: 70ms)

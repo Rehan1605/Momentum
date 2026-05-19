@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   BarChart3,
   Bot,
@@ -9,12 +9,15 @@ import {
   Gauge,
   HeartPulse,
   ListChecks,
+  LogOut,
   Medal,
   Settings,
   Target,
 } from "lucide-react";
 
 import RouteGuard from "@/components/RouteGuard";
+import { removeToken } from "@/lib/auth";
+import api from "@/services/api";
 
 const navigation = [
   { label: "Dashboard", href: "/dashboard", icon: Gauge },
@@ -29,6 +32,18 @@ const navigation = [
 
 export default function AppShell({ title, description, children }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      await api.post("/auth/logout");
+    } catch {
+      // Stateless JWT logout is local-first; backend call is best effort.
+    } finally {
+      removeToken();
+      router.replace("/login");
+    }
+  };
 
   return (
     <RouteGuard>
@@ -65,6 +80,14 @@ export default function AppShell({ title, description, children }) {
                 );
               })}
             </nav>
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="mt-6 flex h-11 w-full items-center gap-3 rounded-md px-3 text-sm text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100"
+            >
+              <LogOut className="size-4" />
+              Logout
+            </button>
           </aside>
 
           <div className="flex min-w-0 flex-1 flex-col">
@@ -95,6 +118,14 @@ export default function AppShell({ title, description, children }) {
                     </Link>
                   );
                 })}
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="flex h-9 shrink-0 items-center gap-2 rounded-md bg-white/5 px-3 text-xs text-zinc-300"
+                >
+                  <LogOut className="size-3.5" />
+                  Logout
+                </button>
               </nav>
             </header>
 
